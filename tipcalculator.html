@@ -36,6 +36,20 @@
                 customTip.style.display="none";
             }
         });
+
+        function calculate() {
+            const billAmount= document.getElementById("bill").value;
+            let tipPercentage;
+            if(document.getElementById("tippercentage").value==="custom") {
+               tipPercentage=document.getElementById("custom-tip").value;
+            }
+            else {
+               tipPercentage=document.getElementById("tippercentage").value;
+            }
+            totalBillAmount=parseFloat(billAmount)+parseFloat(billAmount)*parseFloat(tipPercentage)/100;
+            document.getElementById("tipAmount").innerText=`The total bill amount is ${totalBillAmount}`;
+        }
+
     </script>
 </body>
 </html>
