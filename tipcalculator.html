@@ -14,12 +14,12 @@
     <div class="container">
         <h1>Tip calculator</h1>
         <input type="number" id="bill" placeholder="Enter the bill amount">
-        <select id="tipprecentage">
+        <select id="tippercentage">
             <option value="0">No tip</option>
             <option value="5">5%</option>
             <option value="10">10%</option>
             <option value="15">15%</option>
-            <option>Custom Tip</option>
+            <option value="custom">Custom Tip</option>
         </select>
         <input type="number" id="custom-tip" placeholder="Enter custom tip">
         <button onclick="calculate()">Calculate</button>
@@ -27,5 +27,15 @@
 
         <div id="tipAmount"></div>
     </div>
+    <script>
+        document.getElementById("tippercentage").addEventListener("change", function() {
+            const customTip=document.getElementById("custom-tip");
+            if(this.value==="custom") {
+                customTip.style.display="block";
+            } else {
+                customTip.style.display="none";
+            }
+        });
+    </script>
 </body>
 </html>
