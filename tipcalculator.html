@@ -38,16 +38,25 @@
         });
 
         function calculate() {
-            const billAmount= document.getElementById("bill").value;
+            const billAmount = parseFloat(document.getElementById("bill").value);
+            if (isNaN(billAmount) || billAmount <= 0) {
+                document.getElementById("tipAmount").innerText = "Please enter a valid bill amount.";
+                return;
+            }
+
             let tipPercentage;
             if(document.getElementById("tippercentage").value==="custom") {
-               tipPercentage=document.getElementById("custom-tip").value;
+                tipPercentage = parseFloat(document.getElementById("custom-tip").value);
+                if (isNaN(tipPercentage) || tipPercentage < 0) {
+                    document.getElementById("tipAmount").innerText = "Please enter a valid custom tip percentage.";
+                    return;
+                }
             }
             else {
-               tipPercentage=document.getElementById("tippercentage").value;
+                tipPercentage = parseFloat(document.getElementById("tippercentage").value);
             }
-            totalBillAmount=parseFloat(billAmount)+parseFloat(billAmount)*parseFloat(tipPercentage)/100;
-            document.getElementById("tipAmount").innerText=`The total bill amount is ${totalBillAmount}`;
+            const totalBillAmount = billAmount + (billAmount * tipPercentage / 100);
+            document.getElementById("tipAmount").innerText = `The total bill amount is ${totalBillAmount.toFixed(2)}`;
         }
 
         function reset(){
