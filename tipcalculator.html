@@ -6,5 +6,20 @@
     <title>Tip Calculator</title>
 </head>
 <body>
+    <div class="cointainer">
+        <h1>Tip calculator</h1>
+        <input type="number" id="bill" placeholder="Enter the bill amount">
+        <select id="tipprecentage">
+            <option value="0">No tip</option>
+            <option value="5">5%</option>
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+        </select>
+        <input type="number" id="customTip" placeholder="Enter custom tip">
+        <button onclick="calculate()">Calculate</button>
+        <button onclick="reset()">Reset</button>
+
+        <div id="tipAmount"></div>
+    </div>
 </body>
 </html>
