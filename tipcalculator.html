@@ -50,6 +50,14 @@
             document.getElementById("tipAmount").innerText=`The total bill amount is ${totalBillAmount}`;
         }
 
+        function reset(){
+            document.getElementById("bill").value="";
+            document.getElementById("tippercentage").value="0";
+            document.getElementById("custom-tip").value="";
+            document.getElementById("tipAmount").innerText="";
+            document.getElementById("custom-tip").style.display="none";
+        }
+
     </script>
 </body>
 </html>
